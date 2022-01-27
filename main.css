@@ -1,0 +1,428 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root{
+    --albgcol: #272727;
+    --firtxtcol:#00aeff;
+    --firbgcol:#fcff4a;
+
+    --secbgcol:#507cb6;
+
+    --foubgcol: #9c27b0;
+    --foubgcol2: #009688;
+    --foubgcol3: #2196f3;
+    --foubgcol4: #c4431c;
+    --foubgcol5: yellowgreen;
+    --foubgcol6: #9c27b0;
+
+
+}
+
+body{
+   }
+
+@keyframes change {
+    0%{
+      color: var(--foubgcol);
+    }
+    20%{
+        color: var(--foubgcol2);
+    }
+    40%{
+        color: var(--foubgcol3);
+    }
+    60%{
+        color: var(--foubgcol4);
+    }
+    80%{
+        color: var(--foubgcol5);
+    }
+    100%{
+        color: var(--foubgcol6);
+    }
+}
+@keyframes bgchange {
+    0%{
+        background-color: var(--foubgcol);
+    }
+    20%{
+        background-color: var(--foubgcol2);
+    }
+    40%{
+        background-color: var(--foubgcol3);
+    }
+    60%{
+        background-color: var(--foubgcol4);
+    }
+    80%{
+        background-color: var(--foubgcol5);
+    }
+    100%{
+        background-color: var(--foubgcol6);
+    }
+}
+
+             /* first page */
+
+.firone{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--foubgcol6);
+}
+.firone a{
+    text-decoration: none;
+    color: var(--firtxtcol);
+    border: 2px var(--firtxtcol) solid;
+    padding: 15px 30px;
+    font-size: 28px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.real{
+    position: absolute;
+    top: calc(100% + 22px);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--firbgcol);
+    transition: all 1s;
+    z-index: -1;
+    
+}
+.real::before{
+    content: "";
+    position: absolute;
+    top: -22px;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    background-image: url("pic_bulbon.gif");
+    animation: wave 2s linear infinite;
+}
+
+@keyframes wave {
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 100%;
+    }
+}
+
+.firone a:hover .real{
+    top: 0;
+}
+
+
+        /* second page */
+
+.secone{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.secone ul{
+    display: flex;
+    border-bottom: 2px solid black;
+    border-radius: 10%;
+    padding-bottom: 3px;
+}
+
+.secone ul li{
+    list-style: none;
+    border: 12px solid var(--secbgcol);
+    border-radius: 50%;
+    margin: 0 20px;
+    box-shadow: 1px 1px 10px black;
+    animation: bounce 1s linear infinite alternate-reverse;
+    transition: all 1s;
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateY(0);
+    }
+    50%{  
+        transform: translateY(-100px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.secone ul li:nth-child(2){
+    animation-delay: 0.2s;
+}
+.secone ul li:nth-child(3){
+    animation-delay: 0.4s;
+}
+.secone ul li:nth-child(4){
+    animation-delay: 0.6s;
+}
+.secone ul li:nth-child(5){
+    animation-delay: 0.8s;
+}
+ 
+             /* third page */
+
+.thione{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.thione button{
+    padding: 15px 30px;
+    background-color: var(--firbgcol);
+    color: var(--firtxtcol);
+    font-size: 32px;
+    position: relative;
+    cursor: pointer;
+}
+
+.thione button::before{
+    content: "";
+    position: absolute;  
+    top: -10px; 
+    left: -10px; 
+    width: 23px;
+    height: 23px;
+    border-top: 5px solid var(--foubgcol3);
+    border-left: 5px solid var(--foubgcol3);
+    transition: all 1s;
+}
+
+.thione button::after{
+    content: "";
+    position: absolute;  
+    bottom: -10px; 
+    right: -10px; 
+    width: 23px;
+    height: 23px;
+    border-bottom: 5px solid var(--foubgcol3);
+    border-right: 5px solid var(--foubgcol3);
+    transition: all 1s;
+}
+.thione button:hover:before, 
+.thione button:hover:after{
+    width: 110%;
+    height: 110%;
+}
+    
+      /* fourth page */
+      
+      
+.fouone{
+          width: 100vw;
+          height: 100vh;
+          display: grid;
+          place-items: center;
+          animation: bgchange 10s linear infinite;
+          
+}
+        
+.fouone ul{
+    display: flex;
+    justify-content: center;
+}
+
+.fouone ul li{
+    list-style: none;
+}
+
+.fouone ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    padding: 10px 25px;
+    margin: 0 2rem;
+}
+
+.fouone ul li a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid var(--firbgcol);
+    border-left: 2px solid var(--firbgcol);
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform-origin: left;
+}
+
+.fouone ul li a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid var(--firbgcol);
+    border-right: 2px solid var(--firbgcol);
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform-origin: right;
+    
+}
+
+.fouone ul li a:hover:before,
+.fouone ul li a:hover:after{
+    width: 12px;
+    height: 12px;
+    transform: rotate(180deg);
+}
+
+.fivone{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: bgchange 12s linear infinite;
+}
+
+.card{
+    background-color: white;
+    width: 20rem;
+    height: 15rem;
+    position: relative;
+    margin: 5; 
+    padding: 30px 50px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 14px black;
+    transition: all 0.51s;
+    text-transform: uppercase;
+}
+
+.card:hover{
+    height: 18rem;
+}
+.imgbox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-50px);
+    z-index: 99;
+}
+
+.imgbox img{
+    position: absolute;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.card:hover .content{
+    transform: translateY(-110px);
+    opacity: 1;
+}
+
+.content{
+    transform: translateY(-300px);
+    transition: all 0.21s;
+    opacity: 0;
+    text-align: center;
+}
+
+.content h2{
+    padding-bottom: 10px;
+    animation: change 12s linear infinite;
+}
+
+
+@media (max-width:1038px){
+
+.fouone ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;  
+        place-items: center;    
+}
+.fouone ul li{
+  margin: 45px 0;
+}    
+
+.fivone{
+      display: grid;
+      place-items: center;
+      height: 100vh;
+      grid-template-columns: 1fr 1fr;
+}
+    
+.card{
+        margin: 2rem 0;
+  }
+
+.content{
+    transform: translateY(-200px);
+}
+
+.card:hover .content{
+    transform: translateY(-110px);
+}
+
+.card:hover{
+    height: 18rem;
+}
+
+.content h2{
+    padding-bottom: 0.5rem;
+}
+
+
+}
+@media (max-width:725px){
+.fouone ul{
+        display: flex;
+        flex-direction: column; 
+        align-items: center;     
+        justify-items: center;
+}
+.fouone ul li{
+  margin: 45px 0;
+}
+
+  .fivone{
+      display: flex;
+      flex-direction: column;
+      height: auto;
+  }
+
+  .card{
+      margin: 2rem 0;
+  }
+
+  .content{
+    transform: translateY(-200px);
+}
+
+.card:hover .content{
+    transform: translateY(-110px);
+}
+
+.card:hover{
+    height: 17rem;
+}
+
+
+}
+
+.fontt{
+    font-family: monospace;
+}
